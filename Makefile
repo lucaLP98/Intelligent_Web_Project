@@ -40,7 +40,7 @@ CFLAGS_DEBUG = -std=c11 -Wall -Wextra -g -O0 -fsanitize=address \
                $(SDL_CFLAGS) -I$(SRCDIR)
 
 # ── Regole principali ─────────────────────────────────
-.PHONY: all clean debug run benchmark analysis tuning test help
+.PHONY: all clean debug run run-log benchmark analysis tuning test help
 
 all: $(TARGET)
 
@@ -66,6 +66,9 @@ debug: clean $(TARGET)
 # ── Esecuzione rapida ─────────────────────────────────
 run: all
 	./$(TARGET)
+
+run-log: all
+	./$(TARGET) --log
 
 benchmark: all
 	./$(TARGET) --benchmark
@@ -105,7 +108,8 @@ help:
 	@echo "  test         Compila ed esegue la test suite (senza SDL)"
 	@echo "  all          Compila il progetto (default)"
 	@echo "  debug        Compila con AddressSanitizer e debug info"
-	@echo "  run          Compila ed esegue la GUI"
+	@echo "  run          Compila ed esegue la GUI (terminale pulito)"
+	@echo "  run-log      Compila ed esegue la GUI + log ragionamento IA su terminale"
 	@echo "  benchmark    Compila e avvia il benchmark"
 	@echo "  analysis     Compila e avvia l'analisi sperimentale"
 	@echo "  tuning       Compila e avvia il tuning genetico"
