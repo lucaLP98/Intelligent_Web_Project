@@ -23,7 +23,9 @@
  * Regole Dama Italiana:
  *  - Le pedine si muovono solo in avanti
  *  - Le pedine prendono in tutte le direzioni MA NON possono prendere le dame
- *  - Le dame sono volanti (possono scorrere su tutte le diagonali libere)
+ *  - Le dame possono muoversi avanti e indietro e tutte le duirezioni e mangiare in tutte le direzioni
+ *  - Le catture sono obbligatorie
+ *  - Se ci sono più catture possibili, si sceglie quella che cattura il maggior numero di pezzi (pedine + dame)
  *  - Presa obbligatoria; massimo numero di pezzi; priorità della dama
  *  - A parità di pezzi tra dame: si prende con la dama; poi max dame catturate
  */
@@ -97,8 +99,6 @@ void board_lookup_init(void);
 
 /* Tabelle esportate per l'uso negli altri moduli */
 extern int sq_adj[NUM_SQ][4];          /* adiacente in dir d, -1 = fuori */
-extern int sq_ray[NUM_SQ][4][7];       /* tutte le case nella direzione */
-extern int sq_ray_len[NUM_SQ][4];      /* quante case valide per riga */
 
 /* Indici direzioni */
 #define DIR_UL 0   /* su-sinistra  */
