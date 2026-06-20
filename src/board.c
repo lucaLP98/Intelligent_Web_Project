@@ -6,8 +6,6 @@
  *  Look-up tables globali
  * ══════════════════════════════════════════════ */
 int sq_adj[NUM_SQ][4];
-int sq_ray[NUM_SQ][4][7];
-int sq_ray_len[NUM_SQ][4];
 
 void sq_to_rc(int sq, int *row, int *col) {
     *row = sq >> 2;                          /* sq / 4           */
