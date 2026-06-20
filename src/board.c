@@ -39,14 +39,6 @@ void board_lookup_init(void) {
         for (int d = 0; d < 4; d++) {
             int r1 = row + DR[d], c1 = col + DC[d];
             sq_adj[sq][d] = rc_to_sq(r1, c1);
-
-            sq_ray_len[sq][d] = 0;
-            for (int k = 1; k <= 7; k++) {
-                int rr = row + DR[d]*k, cc = col + DC[d]*k;
-                int s = rc_to_sq(rr, cc);
-                if (s < 0) break;
-                sq_ray[sq][d][sq_ray_len[sq][d]++] = s;
-            }
         }
     }
 }
