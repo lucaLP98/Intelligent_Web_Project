@@ -44,7 +44,7 @@ MCTSPool *mcts_pool_secondary(void) {
 }
 
 /**
- * @brief Libera le risorse del pool (operazione fittizia in questa implementazione statica).
+ * @brief Libera le risorse del pool 
  * @param p Puntatore al pool da "liberare".
  */
 void mcts_pool_free(MCTSPool *p) { (void)p; }
