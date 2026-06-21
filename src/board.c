@@ -68,7 +68,7 @@ static void man_cap_rec(const Board *b, int sq, int side,
     uint32_t eff_occ = (b->bm | b->bk | b->wm | b->wk) & ~cur->cap_mask;
     bool extended = false;
 
-    /* BUG 1 FIX: le pedine catturano SOLO nelle due direzioni in avanti.
+    /* Le pedine catturano SOLO nelle due direzioni in avanti.
      * NERO avanza verso righe crescenti → DIR_DL e DIR_DR.
      * BIANCO avanza verso righe decrescenti → DIR_UL e DIR_UR.
      * Le direzioni all'indietro sono escluse. */
@@ -125,8 +125,8 @@ static void king_cap_rec(const Board *b, int sq, int side,
     uint32_t eff_occ   = (b->bm | b->bk | b->wm | b->wk) & ~cur->cap_mask;
     bool extended = false;
 
-    /* BUG 2 FIX: la dama cattura SOLO pezzi adiacenti (una casella),
-     * non scorre su raggi interi. Si muove in tutte le 4 direzioni diagonali. */
+    /* La dama cattura SOLO pezzi adiacenti (una casella),
+     * Si muove in tutte le 4 direzioni diagonali. */
     for (int d = 0; d < 4; d++) {
         int mid = sq_adj[sq][d];
         if (mid < 0) continue;
@@ -242,9 +242,9 @@ int board_gen_moves(const Board *b, Move *out) {
         }
     }
 
-    /* BUG 2 FIX: Dame – si muovono di UNA sola casella alla volta
+    /* Le Dame si muovono di UNA sola casella alla volta
      * in tutte e 4 le direzioni (avanti e indietro).
-     * NON scorrono su raggi interi (comportamento precedente rimosso). */
+     */
     for (uint32_t bits = my_kings; bits; bits &= bits-1) {
         int sq = __builtin_ctz(bits);
         for (int d = 0; d < 4; d++) {
