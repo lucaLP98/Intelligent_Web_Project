@@ -58,7 +58,7 @@ MCTSParams individual_to_params(const Individual *ind, SelectModel model,
 void tuning_init_population(Individual *pop, int n, unsigned int seed) {
     for (int i = 0; i < n; i++) {
         pop[i].C           = rand_uniform(0.5f,  3.0f, &seed);
-        pop[i].c_puct      = rand_uniform(0.5f,  4.0f, &seed);
+        pop[i].c_puct      = rand_uniform(0.5f,  5.0f, &seed);
         pop[i].prior_cap   = rand_uniform(0.0f,  1.5f, &seed);
         pop[i].prior_promo = rand_uniform(0.0f,  0.8f, &seed);
         pop[i].fitness     = 0.0f;
