@@ -114,3 +114,6 @@ Il modulo `tuning.c` implementa:
 - **Look-up tables**: `sq_adj[32][4]` (adiacente) e `sq_ray[32][4][7]` (raggi per dame) pre-calcolate all'avvio.
 - **Thread AI**: `SDL_CreateThread` per non bloccare il rendering; comunicazione tramite `SDL_atomic_t`.
 - **Rollout**: la `Board` (16 byte) viene copiata per valore sullo stack, nessun clone heap.
+
+## Documentazione
+La documentazione completa del progetto comprensiva dei fondamenti teorici, scelte progettuali, documentazioni delle funzioni e analisi delle prestazione è disponibile al seguente a href="https://drive.google.com/file/d/1NFRlU90Up3-SdYq7ew1zb5rMDHumHdxv/view?usp=sharing">LINK</a>
