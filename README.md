@@ -116,4 +116,4 @@ Il modulo `tuning.c` implementa:
 - **Rollout**: la `Board` (16 byte) viene copiata per valore sullo stack, nessun clone heap.
 
 ## Documentazione
-La documentazione completa del progetto comprensiva dei fondamenti teorici, scelte progettuali, documentazioni delle funzioni e analisi delle prestazione è disponibile al seguente a href="https://drive.google.com/file/d/1NFRlU90Up3-SdYq7ew1zb5rMDHumHdxv/view?usp=sharing">LINK</a>
+La documentazione completa del progetto comprensiva dei fondamenti teorici, scelte progettuali, documentazioni delle funzioni e analisi delle prestazione è disponibile al seguente <a href="https://drive.google.com/file/d/18PzuwGCiHV7IP8JYtxG5ZdsnphKeFFFm/view?usp=sharing">LINK</a>
