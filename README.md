@@ -24,7 +24,7 @@ dama/
 ## Compilazione
 
 ### Requisiti
-- **GCC** (o Clang) con supporto C11
+- **GCC**
 - **SDL2** e **SDL2_ttf** per la GUI
 - **libm** (standard)
 
@@ -46,7 +46,7 @@ make               # compila tutto
 make test          # compila ed esegue la test suite (senza SDL)
 make run           # compila ed avvia la GUI
 make run-log       # compila ed avvia la GUI e stampa su terminale il ragionamento dell'AI
-make clean         # rimuove binari
+make clean         # rimuove file binari
 ```
 
 ---
@@ -60,21 +60,6 @@ make clean         # rimuove binari
 ./dama --tuning          # tuning genetico (alcuni minuti)
 ./dama --tuning --fast   # tuning veloce (meno generazioni)
 ```
-
----
-
-## Regole implementate (Dama Italiana)
-
-| Regola | Implementazione |
-|--------|----------------|
-| Presa obbligatoria | `filter_captures()` scarta le mosse semplici se esistono catture |
-| Massimo pezzi | priorità 1 in `filter_captures()` |
-| Priorità dama | priorità 2: se esiste almeno una cattura con dama, scarta le pedine |
-| Massimo dame catturate | priorità 3 tra le mosse di dame |
-| Pedine non catturano dame | `man_cap_rec()` usa solo `opp_men`, ignora `opp_kings` |
-| Dame volanti | `king_cap_rec()` + mosse semplici con scorrimento in `sq_ray` |
-| Promozione interrompe sequenza | `man_cap_rec()` non ricorre dopo `promotes=true` |
-| Pareggio 40 mosse | `nocap >= 80` in `board_result()` |
 
 ---
 
