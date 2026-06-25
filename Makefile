@@ -106,7 +106,6 @@ $(SRCDIR)/main.o:   $(SRCDIR)/board.h  $(SRCDIR)/mcts.h  $(SRCDIR)/tuning.h $(SR
 # ── Help ─────────────────────────────────────────────
 help:
 	@echo "Target disponibili:"
-	@echo "  test         Compila ed esegue la test suite (senza SDL)"
 	@echo "  all          Compila il progetto (default)"
 	@echo "  debug        Compila con AddressSanitizer e debug info"
 	@echo "  run          Compila ed esegue la GUI (terminale pulito)"
@@ -115,4 +114,5 @@ help:
 	@echo "  analysis     Compila e avvia l'analisi sperimentale"
 	@echo "  tuning       Compila e avvia il tuning genetico"
 	@echo "  tuning-fast  Tuning veloce (meno generazioni)"
+	@echo "  tuning       Compila e avvia il tuning con CLOP"
 	@echo "  clean        Rimuove file oggetto e binario"
