@@ -57,7 +57,7 @@ make clean         # rimuove file binari
 ./dama --analysis        # analisi sperimentale UCB1 vs PUCT
 ./dama --tuning          # tuning genetico (alcuni minuti)
 ./dama --tuning --fast   # tuning veloce (meno generazioni)
-./dama --clop            # tuning mediante CLOP (alcuni minuti)
+./dama --clop            # tuning con CLOP
 ```
 
 ---
@@ -97,12 +97,14 @@ Il modulo `tuning.c` implementa:
 
 1. **Algoritmo Genetico**: popolazione di individui con parametri `(C, c_puct, prior_cap, prior_promo)`, crossover uniforme, mutazione gaussiana, élite preservation
 2. **Round-Robin Tournament**: ogni individuo gioca contro tutti gli altri, fitness = W − L + 0.5·D
-3. **BAI** (Best Arm Identification): sfide dirette tra campione e challenger per raffinamento finale
-4. **Salvataggio** in `dama_params.txt` (caricato automaticamente all'avvio della GUI)
+3. **Algoritmo CLOP**
+4. **BAI** (Best Arm Identification): sfide dirette tra campione e challenger per raffinamento finale
+5. **Salvataggio** in `dama_params.txt` (caricato automaticamente all'avvio della GUI)
 
 ```bash
 ./dama --tuning --fast   # ~5 min: 3 generazioni, 6 individui
 ./dama --tuning          # completo: 6 generazioni, 12 individui
+./dama --clop
 ```
 
 ---
@@ -113,6 +115,3 @@ Il modulo `tuning.c` implementa:
 - **Look-up tables**: `sq_adj[32][4]` (adiacente) e `sq_ray[32][4][7]` (raggi per dame) pre-calcolate all'avvio.
 - **Thread AI**: `SDL_CreateThread` per non bloccare il rendering; comunicazione tramite `SDL_atomic_t`.
 - **Rollout**: la `Board` (16 byte) viene copiata per valore sullo stack, nessun clone heap.
-
-## Documentazione
-La documentazione completa del progetto comprensiva dei fondamenti teorici, scelte progettuali, documentazioni delle funzioni e analisi delle prestazione è disponibile al seguente <a href="https://drive.google.com/file/d/18PzuwGCiHV7IP8JYtxG5ZdsnphKeFFFm/view?usp=sharing">LINK</a>
