@@ -51,6 +51,7 @@ $(TARGET): $(OBJS)
 	@echo "  Avvio GUI:        ./$(TARGET)"
 	@echo "  Benchmark:        ./$(TARGET) --benchmark"
 	@echo "  Tuning:           ./$(TARGET) --tuning [--fast]"
+	@echo "  Tuning:           ./$(TARGET) --clop"
 	@echo "  Analisi:          ./$(TARGET) --analysis"
 	@echo ""
 
