@@ -59,6 +59,7 @@ make clean         # rimuove file binari
 ./dama --analysis        # analisi sperimentale UCB1 vs PUCT
 ./dama --tuning          # tuning genetico (alcuni minuti)
 ./dama --tuning --fast   # tuning veloce (meno generazioni)
+./dama --clop            # tuning mediante CLOP (alcuni minuti)
 ```
 
 ---
