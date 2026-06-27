@@ -333,6 +333,7 @@ void tuning_run(MCTSParams *best_ucb1, MCTSParams *best_puct,
     int best_idx = tuning_bai(pop_ucb1, n, bai_budget, tp, SEL_UCB1, pool_a, pool_b);
     *best_ucb1 = individual_to_params(&pop_ucb1[best_idx], SEL_UCB1, 1.0);
 
+   //stampa risultati
     if (tp->verbose) {
         printf("\n[UCB1] Migliori parametri: C=%.3f\n", best_ucb1->C);
     }
